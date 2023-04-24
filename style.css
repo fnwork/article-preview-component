@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+}
+main{
+    min-height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Manrope', sans-serif;
+}
+section{
+    max-width: 730px;
+    width: 100%;
+    height: 300px;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1.25rem;
+    border-radius: 0.625rem;
+}
+section .image{
+    grid-column: 1 / 4;
+    height: inherit;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 8%;
+    border-radius: 0.625rem 0 0 0.625rem;
+}
+section .content{
+    grid-column: 4 / 8;
+    width: 100%;
+    align-self: center;
+    padding: 0 2.125rem 0 1rem;
+}
+.text h1{
+    font-size: 1.188rem;
+    font-weight: 700;
+    line-height: 1.5625rem;
+    color: hsl(217, 19%, 35%);
+    margin-bottom: 0.9375rem;
+}
+.text p{
+    margin-bottom: 0.9375rem;
+    color: hsl(214, 17%, 51%);
+    line-height: 1.1875rem;
+}
+.text p, .profile h3{
+    font-size: 0.813rem;
+    font-weight: 500; 
+}
+ .profile-section{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile{
+    display: inline-flex;
+}
+.profile img{
+    width: 2.8125rem;
+    height: 2.8125rem;
+    border-radius: 50%;
+    margin-right: 0.875rem;
+}
+.profile h2{
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: hsl(217, 19%, 35%);
+}
+.profile h3{
+    color: hsl(212, 23%, 69%);
+}
+.btn{
+    width: 1.5625rem;
+    height: 1.5625rem;
+    border-radius: 50%;
+    background: hsl(210, 46%, 95%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn.active{
+    background: hsl(214, 17%, 51%);
+}
+.btn.active svg path{
+    fill: #fff;
+}
+.dropdown{
+    width: 14.375rem;
+    height: 3.125rem;
+    background: hsl(217, 19%, 35%);
+    display: none;
+    position: absolute;
+    bottom: 4rem;
+    left: 65%;
+    padding: 0.75rem 1.5625rem;
+    border-radius: 0.5625rem;
+    box-shadow: 0.125rem 0.125rem 0.3125rem rgb(167, 154, 154);
+}
+.dropdown.active {
+    display: block;
+}
+.dropdown::before{
+    content: "";
+	position: absolute;
+	top: 3.75rem;
+	left: 45%;
+	transform: translateY(-50%);
+	z-index: 1;
+	border: 0.625rem solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+}
+.dropdown ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin-right: 1rem;
+}
+ul li p{
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing:  0.25rem;
+    font-weight: 400;
+    color: hsl(212, 23%, 69%);
+    margin-right:  0.25rem;
+}
+ul li img{
+    cursor: pointer;
+}
+.attribution { 
+    font-size: 0.6875rem; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+@media screen and (min-width: 360px) and (max-width: 550px) {
+    section{
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr;
+        margin: 5%;
+    }
+    section .image{
+        grid-column: 1;
+    }
+    .image img{
+        border-radius: 0.625rem 0.625rem 0 0;
+        height: 13.125rem;
+        object-position: center 26%;
+    }
+    section .content{
+        grid-column: 1;
+        padding: 0;
+        margin-top: 18px;
+    }
+    .text h1{
+        font-size: 1.13rem;
+        padding: 0 1.875rem;
+    }
+    .text p{
+        font-size: 14.5px;
+        padding: 0 1.875rem;
+    }
+    .profile-section{
+        padding: 0.625rem 1.875rem;
+    }
+    .btn{
+        z-index: 10;
+    }
+    .dropdown{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 70px;
+        display: none;
+        justify-content: left;
+        align-items: center;
+        border-radius: 0 0 0.625rem 0.625rem;
+    }
+    .dropdown.active{
+        display: flex;
+    }
+    .dropdown::before{
+        display: none;
+    }
+    ul li img{
+        width: 100%;
+    }
+}
